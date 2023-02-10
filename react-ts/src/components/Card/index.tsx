@@ -1,12 +1,18 @@
 import * as C from './styles'
 
-export default function Card(){
+import { ValuesContext } from '../../contexts/ValuesContex'
+import { useContext } from 'react'
+
+export default function Card(props: {title: string, quantity: number}){
+
+    const {earns, bills, setEarns, setBills} = useContext(ValuesContext) as any
+
 
     return(
         <C.Card>
-            <h3>Title</h3>
+            <h3>{props.title}</h3>
 
-            <p>Quantity</p>
+            <p>R${props.quantity},00</p>
         </C.Card>
     )
 

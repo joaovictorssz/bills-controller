@@ -23,7 +23,21 @@ nav{
         width: 447px;
     }
 
-    #type{}
 
 }
+`
+
+export const Item = styled.div`
+
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    p:first-child{
+        width: 247px;
+    }
+
+    p:nth-child(2){
+        width: 447px;
+    }
+
 `
