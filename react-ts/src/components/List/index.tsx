@@ -22,7 +22,7 @@ export default function List(props: {name: string, quantity: string, type: strin
                 return(
                     <C.Item key={b}>
                         <p>{props.list[b].name}</p>
-                        <p>R${props.list[b].quantity},00</p>
+                        <p>R${props.list[b].quantity}</p>
                         <p>{props.list[b].type}</p>
                     </C.Item>
                 )

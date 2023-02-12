@@ -17,6 +17,7 @@ export const Card = styled.div`
         margin-top: 21px;
         font-weight: 500;
         font-size: 32px;
+        
     }
 
 

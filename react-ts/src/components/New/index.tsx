@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { FieldValues } from 'react-hook-form/dist/types'
 import { ValuesContext } from '../../contexts/ValuesContex'
 import { useContext } from 'react'
+import {toast} from 'react-toastify'
 
 type NewCard = {
     name: string,
@@ -14,8 +15,8 @@ type NewCard = {
 type ContextTypes = {
     earns: string,
     bills: string,
-    setEarns: (content: number)=> void,
-    setBills: (content: number)=> void,
+    setEarns: (content: string)=> void,
+    setBills: (content: string)=> void,
     list : NewCard[],
     setList: (content: NewCard | FieldValues)=> void
 
@@ -34,18 +35,35 @@ export default function New(){
         
         if(data.type === 'Entrada'){
 
-              setEarns(parseFloat(data.quantity) + parseFloat(earns))
-            
+              if(data.quantity > 0){
+                let actualEarn = parseFloat(earns)
+                let value = parseFloat(parseFloat(data.quantity).toFixed(2))
+                setEarns(`${(actualEarn + value).toFixed(2)}`)
+                setLi([...li, data])
+                toast.success("Done")
+              }
+              if(data.quantity <0){
+                
+                toast.error("Unavailable value")
+
+              }
         }
 
         if(data.type === 'Saída'){
-            setBills(parseFloat(data.quantity) + parseFloat(bills))
 
+            if(data.quantity > 0){
+                let actualBill = parseFloat(bills)
+                let value = parseFloat(parseFloat(data.quantity).toFixed(2))
+                setBills(`${(actualBill + value).toFixed(2)}`)
+                setLi([...li, data])
+                toast.success("Done")
+            }
+            if(data.quantity <0){
+                
+                toast.error("Unavailable value")
+
+              }
         }
-
-        setLi([...li, data])
-
-
 
     }
 
@@ -58,7 +76,7 @@ export default function New(){
     return(
         <C.New onSubmit={handleSubmit(handleAddNewValue)}>
             <input required id='name' type="text" {...register('name')} placeholder='Name'/>
-            <input required id='quantity' type="number" {...register('quantity')} placeholder='Quantity'/>
+            <input required id='quantity' step="0.010" type="number" {...register('quantity')} placeholder='Quantity'/>
 
             <section>
                     <input required {...register("type")} type="radio" name="type" value={'Entrada'} id="in" />
