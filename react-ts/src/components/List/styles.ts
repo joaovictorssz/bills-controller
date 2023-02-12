@@ -25,6 +25,10 @@ nav{
 
 
 }
+
+@media screen and (max-width: 968px) {
+    font-size: 12px;
+}
 `
 
 export const Item = styled.div`
@@ -39,5 +43,9 @@ export const Item = styled.div`
     p:nth-child(2){
         width: 447px;
     }
+
+    @media screen and (max-width: 968px) {
+    font-size: 12px;
+}
 
 `

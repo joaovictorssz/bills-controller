@@ -8,6 +8,7 @@ background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, F
 
 width: 100%;
 height: 100vh;
+overflow-y: scroll;
 
 display: flex;
 align-items: center;
@@ -15,7 +16,7 @@ justify-content: center;
 
 main{
 
-    width: 823px;
+    width: 50%;
     
     #card-section{
         display: flex;
@@ -24,5 +25,13 @@ main{
 
 }
 
+
+@media screen and (max-width: 968px) {
+
+    #card-section{
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 `

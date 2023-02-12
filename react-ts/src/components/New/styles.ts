@@ -16,7 +16,7 @@ export const New = styled.form`
         border-radius: 6px;
         background: none;
         border: #929292 1px solid;
-        width: 190px;
+        width: 25%;
         height: 40px;
 
         &:focus{
@@ -25,7 +25,7 @@ export const New = styled.form`
     }
 
     button{
-        width: 100px;
+        width: 10%;
         height: 40px;
         background: #78D668;
         border: none;
@@ -35,6 +35,39 @@ export const New = styled.form`
         font-weight: 500;
         cursor: pointer;
 
+    }
+
+    @media screen and (max-width: 968px) {
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        height: auto;
+        margin-top: 2px;
+        
+        #name, #quantity{
+        margin: 6px 0px;
+        padding: 0px 12px;
+        border-radius: 6px;
+        background: none;
+        border: #929292 1px solid;
+        width: 100%;
+        height: 40px;
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    #radio{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    button{
+        margin-top: 12px;
+        width: 100%;
+    }
     }
 
 

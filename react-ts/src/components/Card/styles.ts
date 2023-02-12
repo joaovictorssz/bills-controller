@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Card = styled.div`
     margin: 33px 0;
-    width: 257px;
+    width: 30%;
     height: 147px;
     background-color: #fff;
     border-radius: 20px;
@@ -18,6 +18,20 @@ export const Card = styled.div`
         font-weight: 500;
         font-size: 32px;
         
+    }
+
+    @media screen and (max-width: 968px) {
+
+        width: 100%;
+        margin: 2px 0;
+
+        h3{
+            font-size: 16px;
+        }
+        p{
+            font-size: 22px;
+        }
+     
     }
 
 

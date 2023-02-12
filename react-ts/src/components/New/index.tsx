@@ -78,14 +78,16 @@ export default function New(){
             <input required id='name' type="text" {...register('name')} placeholder='Name'/>
             <input required id='quantity' step="0.010" type="number" {...register('quantity')} placeholder='Quantity'/>
 
-            <section>
-                    <input required {...register("type")} type="radio" name="type" value={'Entrada'} id="in" />
-                <label htmlFor="in">Entrada</label>
-            </section>
+            <section id='radio'>
+                <section>
+                        <input required {...register("type")} type="radio" name="type" value={'Entrada'} id="in" />
+                    <label htmlFor="in">Entrada</label>
+                </section>
 
-            <section>
-                <input required {...register("type")} type="radio" value={'Saída'} name="type" id="out" />
-                <label htmlFor="out">Saída</label>
+                <section>
+                    <input required {...register("type")} type="radio" value={'Saída'} name="type" id="out" />
+                    <label htmlFor="out">Saída</label>
+                </section>
             </section>
 
 

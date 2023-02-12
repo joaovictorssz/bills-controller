@@ -45,7 +45,7 @@ function App() {
                 </section>
 
                 <section id='list-section'>
-                  <List list={list} name='Nome' quantity='Quantidade' type='Tipo' key={0}></List>
+                  <List list={list} name='Nome' quantity='Qtd' type='Tipo' key={0}></List>
                 </section>
             </main>
         </Div>
